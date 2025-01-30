@@ -1,4 +1,22 @@
 import collections
+from math import hypot
+class Vector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    def __repr__(self):
+        return 'Vector(%r, %r)' % (self.x, self.y)
+    def __abs__(self):
+        return hypot(self.x, self.y)
+    def __bool__(self):
+        return bool(abs(self))
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
+    def __mul__(self, scalar):
+        return Vector(self.x * scalar, self.y * scalar)
+
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
 def spades_high(card):
@@ -15,3 +33,5 @@ class FrenchDeck:
         return len(self._cards)
     def __getitem__(self, position):
         return self._cards[position]
+v1 = Vector(3,4)
+v2 = Vector(2,1)
