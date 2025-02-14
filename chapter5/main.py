@@ -15,7 +15,7 @@ import random
 class BingoCage:
     def __init__(self, items):
         self._items = list(items)
-        random.shuffle(self, self._items)
+        random.shuffle(self._items)
     def pick(self):
         try:
             return self._items.pop()
@@ -26,5 +26,6 @@ class BingoCage:
     def __len__(self):
         return len(self._items)
 bingo = BingoCage(range(3))
-bingo.pick()
-bingo()
+print(bingo.pick())
+print(bingo())
+print(bingo())
