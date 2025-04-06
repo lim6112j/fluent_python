@@ -19,4 +19,4 @@ def _(n):
 def _(seq):
     inner = '</li>\n<li>'.join(htmlize(item) for item in seq)
     return '<ul>\n<li>' + inner + '</li>\n</ul>'
->>>>>>> 58091895bc7b883b33871880ad97acd4198d0d89
+
